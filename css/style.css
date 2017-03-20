@@ -70,7 +70,7 @@ html {
 
 
 body {
-    background-color: #FFFFFF;
+    background-color: /*#FFFFFF*/#f9f9f9;
     color: #757575;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 16px;
@@ -90,7 +90,7 @@ body {
 ------------------------------------------*/
 
 .bg-lightgray {
-    background: #f5f5f5;
+    background: #e4e4e4;
 }
 
 .bg-white {
@@ -770,11 +770,11 @@ section.bg-primary p {
 
 .angled_down_outside.lightgray,
 .angled_down_outside.lightgray.white {
-    background-color: #f5f5f5;
+    background-color: #e4e4e4;
 }
 
 .angled_down_outside.lightgray {
-    background-color: #f5f5f5;
+    background-color: #e4e4e4;
 }
 
 .angled_down_outside.white .slope.downright,
@@ -853,7 +853,7 @@ section.bg-primary p {
 .angled_up_inside.lightgray,
 .angled_up_inside.lightgray .slope.upright,
 .angled_up_inside.lightgray .slope.upleft {
-    background-color: #f5f5f5;
+    background-color: #e4e4e4;
 }
 
 
@@ -906,7 +906,7 @@ section.bg-primary p {
 .angled_down_inside.lightgray,
 .angled_down_inside.lightgray .slope.upright,
 .angled_down_inside.lightgray .slope.upleft {
-    background-color: #f5f5f5;
+    background-color: #e4e4e4;
 }
 
 .angled_down_inside.black,
@@ -1962,7 +1962,7 @@ section.header.header-small .header-img {
 section.header .header-logo-wrap {
     position: absolute;
     width: 100%;
-    height: 100px;
+    height: 86px;
     z-index: 5;
     top: 0px;
     left: 0px;
@@ -2431,7 +2431,7 @@ section.header-parallax.fixed-top .container .logo span:after {
 
 .fontawesome div:hover,
 .material_icons div:hover{
-    background-color: #f5f5f5;
+    background-color: #e4e4e4;
     cursor: pointer;
 }
 
@@ -3899,7 +3899,7 @@ section.services .angled_down_outside{
     transform-style: preserve-3d;
     position: relative;
     text-align: right;
-    background: #f5f5f5;
+    background: #e4e4e4;
     display: none;
     vertical-align: top;
     -webkit-backface-visibility: hidden;
@@ -4068,7 +4068,7 @@ section.contact {
     /*    background-attachment: fixed;*/
    /* background-size: cover;
     /*    background-position: center center;*/
-	background-color: #757575;
+	background-color: /*#757575*/ #e4e4e4;
 }
 
 section.contact .container {
@@ -4488,7 +4488,7 @@ body.horizontal section.clients{
 
 .well{
     border: 0px solid transparent;
-    background-color: #f5f5f5;
+    background-color: #e4e4e4;
     box-shadow: none;
     -o-box-shadow: none;
     -ms-box-shadow: none;
@@ -4517,7 +4517,7 @@ body.horizontal section.clients{
 }
 
 .effect-box .anim-wrap{
-    background-color: #f5f5f5;
+    background-color: #e4e4e4;
     display: inline-block;
     padding: 25px;
     width: 100%;
@@ -4536,7 +4536,7 @@ body.horizontal section.clients{
 
 .sidebar-widget{
     padding: 30px;
-    background-color: #f5f5f5;
+    background-color: #e4e4e4;
     margin-bottom: 50px;
     width: 100%;
     display: inline-block;   
@@ -4641,7 +4641,7 @@ body.horizontal section.clients{
 
 .sidebar-widget.search-widget{
     padding: 0px;
-    background-color: #f5f5f5;
+    background-color: #e4e4e4;
 }
 
 .sidebar-widget.search-widget form{
@@ -4815,7 +4815,7 @@ body.horizontal section.clients{
 ----------------------------------*/
 
 .ui-columns .panel-body{
-    background-color: #f5f5f5;
+    background-color: #e4e4e4;
     padding: 15px;
     display: inline-block;
     width: 100%;
