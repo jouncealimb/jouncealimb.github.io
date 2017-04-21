@@ -158,6 +158,190 @@
 			<br class="subheading">COMING SOON!
 			<div class="features">
 			
+			    <link href="https://data.rec1.com/custincludes/1411/indexCSS.css" rel="stylesheet">
+    <link href="https://data.rec1.com/custincludes/1411/jumboShare.min.css" rel="stylesheet">
+    <link href="https://data.rec1.com/custincludes/1411/AboutUsCSS.css" rel="stylesheet">
+
+	            <div class="btn-group"><a class="btn btn-default rec1-login-trigger dropdown-toggle" href="#" data-toggle="dropdown"><span class="glyphicon flaticon-lock4"></span> Log In/Create Account <span class="caret"></span></a><ul class="dropdown-menu dropdown-menu-form rec1-login-dropdown openId-login-enabled" role="menu"><li><div class="login-message"></div>
+                            <p class="text-muted small">Jersey City Archery uses Rec1 for online registration.
+                                Use your Facebook or Google account to login or create your account.
+                                We only access your name and email for login purposes.</p>
+                            <span class="text-info small">If you have an existing username & password, use <strong>"Log In with Email"</strong> below.</span>
+                        </li>
+                        <li class="rec1-login-option-facebook rec1-login-option-openid">
+                            <a href="#" class="rec1-login-button-facebook rec1-openid-login-trigger" data-service="facebook">
+                                <i class="flaticon-facebook"></i> Log In with <strong>Facebook</strong></a>
+                        </li>
+                        <li class="rec1-login-option-google rec1-login-option-openid">
+                            <a href="#" class="rec1-login-button-google rec1-openid-login-trigger" data-service="google">
+                                <i class="flaticon-googleplus"></i> Log In with <strong>Google</strong></a>
+                        </li>
+                        <li>
+                            <a href="#" class="rec1-login-toggle-button">
+                                <i class="flaticon-rec13"></i> Log In with <strong>Email</strong></a>
+                                <span class="powered-by-rec1">Powered by REC1</span>
+                        </li><li>
+                        <form class="rec1-login-form form-horizontal ui-inset-sm" action="/NJ/jersey-city-archery-company/account/authenticate" method="POST" data-ajax="1" data-json="1">
+                            <div data-role="errors"></div>
+                            <div class="form-group">
+                                <label for="login-username" class="col-xs-4 control-label">Email/Username</label>
+                                <div class="col-xs-8">
+                                    <input name="username" id="login-username" placeholder="Username" value="" type="text" class="form-control">
+                               </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password" class="col-xs-4 control-label">Password</label>
+                                <div class="col-xs-8">
+                                    <input name="password" id="login-password" placeholder="Password" value="" type="password" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="text-right col-xs-12">
+                                    <a class="rec1-forgot-password-trigger btn btn-link" data-toggle="modal" data-target="#rec1-forgot-password-modal" href="#">Forgot Password?</a>
+                                    <button type="submit" class="btn btn-primary" data-icon="lock">Log In</button>
+                                </div>
+                            </div>
+                        </form>
+                        </li>
+                     
+                        <li>
+                            <a href="#" class="rec1-signup-toggle-button rec1-create-account-trigger create-new-user">
+                                <i class="flaticon-rec13"></i> Create a <strong>JCA</strong> Account</a>
+                                <span class="powered-by-rec1">Powered by REC1</span>
+                        </li>
+                    </ul>
+                  
+                    </div><a class="btn btn-default " href="/NJ/jersey-city-archery-company/catalog"><span class="glyphicon flaticon-grid5"></span> Catalog</a>        </div>
+    </div>
+   
+    <div class="col-xs-7 text-right">
+        <div class="btn-group">
+            <a class="btn btn-default rec1-policies-trigger" href="#" data-toggle="modal" data-target="#rec1-policies-modal"><span class="glyphicon flaticon-stack-list"></span> Policies</a><a class="btn btn-default rec1-help-trigger" href="#" data-toggle="modal" data-target="#rec1-help-modal"><span class="glyphicon flaticon-question4"></span> Help</a>        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="rec1-policies-modal" tabindex="-1" role="dialog" aria-labelledby="rec1-policies-modal-title"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="rec1-policies-modal-title">JCA Policies</h4>
+            </div>
+            <div class="modal-body">
+                Loading...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="rec1-forgot-password-modal" tabindex="-1" role="dialog"
+     aria-labelledby="rec1-forgot-password-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="rec1-policies-modal-title">Forgot Password</h4>
+            </div>
+            <div class="modal-body">
+                <p>Please enter your email address, a new password will be emailed to you.</p>
+
+                <form class="form-horizontal width-sm" role="form"
+                      action="/NJ/jersey-city-archery-company/account/requestPasswordReset" method="post">
+                    <div class="form-group">
+                        <label for="login-username" class="col-sm-2 control-label">Email</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="email" id="login-username"
+                                   placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default"><span>Submit</span></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="rec1-help-modal" tabindex="-1" role="dialog" aria-labelledby="rec1-help-modal-title"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="rec1-help-modal-title">JCA Help</h4>
+            </div>
+            <div class="modal-body">
+                <form action="/NJ/jersey-city-archery-company/contact/submitHelpRequest/1" data-ajax="1" data-json="1"
+                      role="form">
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Name:*</label>
+                        <input type="text" class="form-control" name="fullName" placeholder="Name" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Email:*</label>
+                        <input type="text" class="form-control" name="email" placeholder="Email" id="recipient-email">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Phone:</label>
+                        <input type="text" class="form-control" name="phone" placeholder="Phone" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipient-name" class="control-label">Message:*</label>
+                        <textarea class="form-control" name="message" id="message-text"></textarea>
+                    </div>
+
+                    <div class="g-recaptcha" data-sitekey="6Lf0MP8SAAAAAAjGWRn4Di2na_ybclZhn6M-piQK"></div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary rec1-help-modal-submit">Send Message</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id="rec1-public-notifications">
+        </div>
+
+
+            <div class="rec1-catalog"></div>    </div>
+</div>
+
+
+
+
+<div id="divBackground" class="BackgroundPhoto"></div>
+
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript" src="/public/js/build/rec1.public.min.js?1492590696"></script>
+<script type="text/javascript" src="/public/js/build/rec1.catalog-standard.min.js?1492590697"></script>
+<script type="text/javascript" src="/public/js/catalog/catalog-standard.js?1458184325"></script>
+<script type="text/javascript" src="/public/js/lightbox.min.js?1451447509"></script>
 			
 			
 			
