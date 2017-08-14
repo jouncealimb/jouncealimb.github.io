@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>STEAM Catalogue</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="vendor/bootstrap.css">
+		<style>
+			body {
+				font-family: Monospace;
+				background-color: #000000;
+				margin: 0px;
+				overflow: hidden;
+				justify-content: center;
+				transform-style: preserve-3d;
+			}
+			
+
+			#cover {
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 20;
+			/*padding-bottom: 0px;*/
+			}
+			#cover h1, #cover h2, #cover h3, #cover a{
+				color: white;
+			}
+
+			#STEAM{
+				margin-left: 40px;
+				margin-left: 3vw;
+				/*position: absolute;*/
+			}
+			#STEAM h1{
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 700;
+				font-size: 3.5rem;
+				font-size: 17vw;
+				letter-spacing: .25rem;
+				opacity: 0.8;
+				-webkit-text-stroke: 2px #404040;
+			}	
+			#schools{
+			/*	margin-top: -40px;
+				margin-top: -5vh;
+				margin-right: 40px;
+				margin-right: 3vw;
+				margin-bottom: 40px;
+				margin-bottom: 5vh;*/
+				position: absolute;
+				right: 40px;
+				/*right: 4vw;*/
+				right: 5vh;
+				bottom: 40px;
+				bottom: 5vh;
+			}
+
+			#schools h3{
+				font-family: 'Montserrat', sans-serif;
+				font-weight: 400;
+				font-size: 2.2rem;	
+				text-align: right;
+				line-height: inherit;
+				-webkit-text-stroke: 1.5px #404040;
+			}
+			.no-textstroke #schools h3{
+				/* Fallback for Firefox/Opera*/
+				text-shadow:
+				-1px -1px 0 #404040,  
+				1px -1px 0 #404040,
+				-1px 1px 0 #404040,
+				1px 1px 0 #404040;
+			}			
+				
+				
+			.pull-right {
+			  float: right !important;
+			}
+			
+			
+		.pentagon {
+		  --rotate-figure: 0deg;
+		  perspective: 20000px;
+		  position: relative;
+		  transform: rotateY(var(--rotate-figure)) rotateX(30deg);
+		  transform-style: preserve-3d;
+		  --unit: 1.667vmin;
+		  --square-side: calc(var(--unit) * 20);
+		  --side-unitless: 0.61803398875;
+		  --side: calc(var(--square-side) * var(--side-unitless));
+		  --rotateY: 0deg;
+		  --rotateX: 0deg;
+		  --rotateZ: 0deg;
+		  --fold: 0deg;
+		  --base-distance: calc(var(--square-side) * 1.377162575778731);
+		  width: var(--square-side);
+		  height: var(--square-side);
+		  
+		  --p-y2: 41.2214747707%;
+		  --p-x3: calc(100% - 19.098300562%);
+		  --p-x4: 19.098300562%;
+		  --offset: .19098300562;
+		  --shy-of-the-square: 4.89434837043;
+		  --shy-percent: 4.89434837043%;
+		}
+		.pentagon div {
+		  width: var(--square-side);
+		  height: var(--square-side);
+		  --color: hsl(var(--hue, 193), var(--saturation, 60%), var(--lightness, 60%));
+		  background: var(--color);
+		  color: var(--color);
+		  --path: polygon(50% var(--shy-percent), 100% var(--p-y2), var(--p-x3) 100%, var(--p-x4) 100%, 0% var(--p-y2));
+		  position: absolute;
+		  top: 0;
+		  left: 0;
+		  opacity: .8;
+		  
+		  transition: transform 2000ms ease-out;
+		  transform-style: preserve-3d;
+		  transform-origin: var(--origin-x, 50%) var(--origin-y, 100%);
+		  transform: translate(var(--tx, 0px), var(--ty, 0px)) rotateZ(var(--rz, 0deg)) rotateY(var(--ry, 0deg)) rotateX(var(--fold, 0deg));
+		  
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		}
+
+		/* separating this out so it doesn't crash Edge which has a bug when clip path appears */
+		@supports (clip-path: polygon(50% 0%, 100% 0%, 0% 100%)) or (-webkit-clip-path: polygon(50% 0%, 100% 0%, 0% 100%)) {
+		  .pentagon div {
+			-webkit-clip-path: var(--path);
+			clip-path: var(--path);
+		  }
+		}
+		.pentagon .base {
+		  --fold: 0deg;
+		}
+		.pentagon div:nth-child(1) {
+		  --hue: 343;
+		  --rz: -108deg;
+		  --origin-x: var(--p-x4);
+		}
+		.pentagon div:nth-child(2) {
+		  --hue: 223;
+		  --rz: -36deg;
+		  --origin-x: var(--p-x4);
+		  --tx: calc(var(--p-x4) * -1);
+		  --ty: calc(var(--p-y2) - 100%);
+		}
+		.pentagon div:nth-child(3) {
+		  --hue: 253;
+		  --rz: 36deg;
+		  --origin-x: var(--p-x3);
+		  --tx: var(--p-x4);
+		  --ty: calc(var(--p-y2) - 100%);
+		}
+		.pentagon div:nth-child(4) {
+		  --hue: 283;
+		  --rz: 108deg;
+		  --origin-x: var(--p-x3);
+		}
+		.pentagon div:nth-child(5) {
+		  --hue: 313;
+		  --rz: 180deg;
+		}
+
+		.pentagon section {
+		  border: 0px solid white;
+		  width: var(--square-side);
+		  height: var(--square-side);
+		}
+		.pentagon section:nth-of-type(2) {
+		  transform-style: preserve-3d;
+		  transform-origin: 50% 50% calc(var(--base-distance) * 0);
+		  transform: translateY(calc(var(--square-side) * -1)) translateY(1%) translateX(calc(var(--shy-percent) * -.91)) translateZ(calc(var(--base-distance) * 1)) rotateY(180deg) rotateZ(36deg) translate3d(0, 0, 0);
+		  --saturation: 80%;
+		}
+
+		#dodecahedron {
+			position:fixed;
+			top: 50%;
+			left: 50%;
+			width:30em;
+			height:18em;
+			margin-top: -9em; /*set to a negative number 1/2 of your height*/
+			margin-left: -15em; /*set to a negative number 1/2 of your width*/
+			visibility: visible; /*this will be toggled*/
+		}
+		
+		#header { 
+			visibility: visible;		
+		}
+			
+		</style>
+		
+		<script src="../build/three.js"></script>
+<!--		<script src="header.js"></script>-->
+	</head>
+	<body>
+
+
+
+	
+	<section class = "splash" id="Home">
+	
+		<!--will be hidden after first interaction-->	
+		<div class="pentagon" id="dodecahedron"">
+		  <section>
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div class="base">A</div>
+		  </section>
+		  <section>
+			<div>6</div>
+			<div>7</div>
+			<div>8</div>
+			<div>9</div>
+			<div>10</div>
+			<div class="base">B</div>
+		  </section>
+		</div>	
+		
+		<div id="header"></div>
+		
+		<!--Sketch only displayed if webgl enabled (determined in sketch.js), else will show gif-->
+		<div id="gif"></div>
+		<div id = "cover">
+			<div class = "row pull-right" id = "schools">
+				<h3>RISD</h3>
+				<h3>Brown</h3>
+				<h3>MIT</h3>
+				<h3>Yale</h3>
+				<h3>Rutgers</h3>
+				<h3>UC Berkeley</h3>
+				<h3>BU</h3>
+				<h3>Harvard</h3>
+				<h3>The New School</h3>
+				<h3>UMichigan</h3>
+				<h3>UOttawa</h3>
+			</div>
+			<div class = "row" id = "STEAM">
+				<div class = "visible-xs">
+					<h1>STEAM</h1>
+				</div>
+				<div class = "hidden-xs">
+					<h1>STEAM</h1>
+				</div>
+			</div>
+
+		</div>
+	</section>
+	
+	<section id="Foreword"> 
+	<div>
+	HELLO
+	</div>
+	</section>
+
+	<section id="Table_of_Contents"> 
+	<div>
+	HELLO
+	</div>
+	</section>	
+		
+		
+	</body>
+</html>
+
+
+
+<!-- the following is for initial animation -->
+<script>
+var dodecahedron =  document.getElementById('dodecahedron');
+
+if (document.body.animate) {
+  var a = dodecahedron.animate({
+    transform: ['rotateY(0deg) rotateZ(0deg) rotateX(0deg) translate3d(0,0,-20vmin) ', ' rotateY(3600deg) rotateZ(1800deg) rotateX(-720deg)  translate3d(0,0,-20vmin) ']
+  }, {
+    duration: 28000,
+    iterations: Infinity
+  });
+  a.currentTime = 0;
+  a.playbackRate = .3;
+}
+
+var state = false;
+toggle();
+dodecahedron.onmouseover=function(){toggle();};
+/*setInterval(toggle, 3000);*/
+
+function toggle() {
+  console.log("State: " + state); 
+  if (!state) { 
+    dodecahedron.style.setProperty('--fold', '-63.5deg')
+	state = true;
+  } else if (state) {
+ 	console.log("WE PRESS " + state);
+	dodecahedron.style.setProperty('--fold', '0deg');
+
+	//delay for a few, and then "explode"
+	setTimeout(explode, 1210);
+  }
+}
+
+var container, stats;
+var camera, scene, raycaster, renderer;
+var mouse = new THREE.Vector2(), INTERSECTED;
+var radius = 100, theta = 0;
+function explode(){
+
+	document.getElementById('dodecahedron').style.display = 'none';
+
+	init();
+	animate();
+
+	
+	//document.getElementById('dodecahedron').style.visibility = 'hidden';
+	document.getElementById('header').style.visibility = 'visible';
+
+}
+
+
+
+
+
+
+
+
+<!--- All of this is for Header Explosion -->
+
+
+
+			function init() {
+				//container = document.createElement( 'div' );
+				container = document.getElementById( 'header' );
+				//document.body.appendChild( container );
+				camera = new THREE.PerspectiveCamera( 58, window.innerWidth / window.innerHeight, 5, 1000 );
+				scene = new THREE.Scene();
+				var light = new THREE.DirectionalLight( 0xffffff, 1 );
+				light.position.set( 1, 1, 1 ).normalize();
+				scene.add( light );
+				//var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+				var geometry = new THREE.DodecahedronGeometry( 7 );
+				//var geometry = new THREE.RingGeometry( 1, 5, 32 );
+				for ( var i = 0; i < 11; i ++ ) {
+					//var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } ) );
+					//var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { transparent: true, opacity: 0.5 } ) );
+					var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: 0xffffff, opacity: 0.2 } ) );
+					object.position.x = Math.random() * 100 - 40;
+					object.position.y = Math.random() * 100 - 40;
+					object.position.z = Math.random() * 100 - 40;
+					object.rotation.x = Math.random() * 2 * Math.PI;
+					object.rotation.y = Math.random() * 2 * Math.PI;
+					object.rotation.z = Math.random() * 2 * Math.PI;
+					scene.add( object );
+				}
+				for ( var i = 0; i < 20; i ++ ) {
+					var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: 0xffffff, wireframe: true } ) );
+					object.position.x = Math.random() * 100 - 40;
+					object.position.y = Math.random() * 100 - 40;
+					object.position.z = Math.random() * 100 - 40;
+					object.rotation.x = Math.random() * 2 * Math.PI;
+					object.rotation.y = Math.random() * 2 * Math.PI;
+					object.rotation.z = Math.random() * 2 * Math.PI;
+					scene.add( object );
+				}
+				raycaster = new THREE.Raycaster();
+				renderer = new THREE.WebGLRenderer();
+				renderer.setClearColor( 0x000 ); //background color
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.sortObjects = false;
+				document.getElementById( 'header' ).append(renderer.domElement);
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+				window.addEventListener( 'resize', onWindowResize, false );
+			}
+
+			function onWindowResize() {
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+				renderer.setSize( window.innerWidth, window.innerHeight );
+			}
+
+			function onDocumentMouseMove( event ) {
+				event.preventDefault();
+				mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+				mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+			}
+			
+			function animate() {
+				requestAnimationFrame( animate );
+				render();
+			}
+
+			function render() {
+				theta += 0.1;
+				camera.position.x = radius * Math.sin( THREE.Math.degToRad( theta ) );
+				camera.position.y = radius * Math.sin( THREE.Math.degToRad( theta ) );
+				camera.position.z = radius * Math.cos( THREE.Math.degToRad( theta ) );
+				camera.lookAt( scene.position );
+				camera.updateMatrixWorld();
+
+				// find intersections
+				raycaster.setFromCamera( mouse, camera );
+				var intersects = raycaster.intersectObjects( scene.children );
+				if ( intersects.length > 0 ) {
+					if ( INTERSECTED != intersects[ 0 ].object ) {
+						if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+						INTERSECTED = intersects[ 0 ].object;
+						INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
+						INTERSECTED.material.emissive.setHex( 0xff0000 );
+						//start rotation animation 
+						/*  var a = INTERSECTED.animate({
+							transform: ['rotateY(0deg) rotateZ(0deg) rotateX(0deg) translate3d(0,0,-20vmin) ', ' rotateY(3600deg) rotateZ(1800deg) rotateX(-720deg)  translate3d(0,0,-20vmin) ']
+						  }, {
+							duration: 28000,
+							iterations: Infinity
+						  });
+						  a.currentTime = 0;
+						  a.playbackRate = .3;*/
+					}
+				} else {
+					if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+					INTERSECTED = null;
+				}
+				renderer.render( scene, camera );
+			}
+		
+
+</script>
