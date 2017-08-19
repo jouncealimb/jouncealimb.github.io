@@ -8,25 +8,10 @@
 	<meta http-equiv="author" content="Danica Sapit">
 	<meta name="keyword" content="Lorem Ipsum">
 	<meta property="og:title" content="Lorem Ipsum"/>
-	<!--<meta property='og:image' content='http://steamwith.us/content/catalogue/five/img/catpreview.png'/>-->
 	<meta property="og:description" content=""/>
-	<!--<meta property="og:url" content="http://danicasapit.com/gallery/lorem_ipsum/">-->
 	<meta property="og:image:width" content="940"/>
 	<meta property="og:image:height" content="492"/>
-	<!--<link rel="image_src" href="http://steamwith.us/content/catalogue/five/img/catpreview.png" />-->
-	<link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-	<!--<link rel="image_src" href="img/preview.png" />-->
-
-	<!--Processing-->
-	<!--<script language="javascript" type="text/javascript" src="processing/libraries/p5.min.js"></script>
-	<script language="javascript" type="text/javascript" src="processing/libraries/p5.dom.js"></script>
-	<script language="javascript" type="text/javascript" src="processing/sketch.js"></script>-->
-
-	<script type="text/javascript" src="js/vendor/jquery.min.js"></script>
-	<!--<link rel="icon" href="http://steamwith.us/img/favicon5.png?v=2" />-->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
 	<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -46,30 +31,61 @@
 		justify-content: center;
 		transform-style: preserve-3d;
 	}
-	img {
-	  display: block;
-	  max-width:8700px;
-	  max-height:1050px;
-	  width: auto;
-	  height: auto;
-    -webkit-animation: fadein 5s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 5s; /* Firefox < 16 */
-        -ms-animation: fadein 5s; /* Internet Explorer */
-         -o-animation: fadein 5s; /* Opera < 12.1 */
-            animation: fadein 5s;	  
-	}
-	@keyframes fadein {
-		from { opacity: 0; }
-		to   { opacity: 1; }
+	.match {
+		padding-top: 100px;
+		max-width:8650px;
+		max-height:1000px;
+		width: auto;
+		height: auto;
+		-webkit-animation: fadeinout 4s linear forwards;
+		animation: fadeinout 4s linear forwards;
+		-moz-animation: fadeinout 4s linear forwards;
+		-ms-animation: fadeinout 4s linear forwards;
+		-o-animation: fadeinout 4s linear forwards;	
+		}
+		@-webkit-keyframes fadeinout {
+		  0%,100% { opacity: 0; }
+		  50% { opacity: 1; }
+		}
+		@keyframes fadeinout {
+		  0%,100% { opacity: 0; }
+		  50% { opacity: 1; }
+		}
 	}
 	</style>
 	
 </head>
 
 <body>
-<img src="img/loremIpsum/lorem1.svg">
-<img src="img/loremIpsum/lorem2.svg">
-<img src="img/loremIpsum/lorem3.svg">
+
+<img id=0 class="match" src="img/loremIpsum/lorem1.svg" style="display: block">
+<img id=1 class="match" src="img/loremIpsum/lorem2.svg" style="display: none">
+<img id=2 class="match" src="img/loremIpsum/lorem3.svg" style="display: none">
+
+<script> 
+window.onload = function start() {
+    window.setInterval(function(){ setTimeout(swipeAway, 5000); }, 6000);
+}
+
+function swipeAway(){
+	var elements = document.getElementsByClassName('match');
+	for(var i=0; i < elements.length; i++){
+		var person = elements.item(i);
+		if(person.style.display == "block"){
+			
+			//set this one to none 
+			person.style.display = "none";
+			
+			//set the next one to be shown 
+			if(i == 2) { i = -1; }
+			console.log(i);
+			document.getElementById((i + 1)).style.display = "block";
+			break; 	
+		}
+	}
+}
+</script> 
+
 
 </body>
 </html>
